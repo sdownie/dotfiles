@@ -48,37 +48,12 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 # User configuration
-
 export PATH="$PATH:/Users/scottdownie/.rvm/gems/ruby-2.1.1/bin:/Users/scottdownie/.rvm/gems/ruby-2.1.1@global/bin:/Users/scottdownie/.rvm/rubies/ruby-2.1.1/bin:/Users/scottdownie/.rbenv/bin:/Users/scottdownie/.pyenv/bin:/usr/local/bin:./node_modules/.bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/scottdownie/.gem/ruby/1.8/bin:/opt/nginx/sbin:/Users/scottdownie/.rvm/bin:/Users/scottdownie/.bash_it/plugins/available/todo:/Users/scottdownie/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+# EDITOR
 export GIT_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
@@ -86,11 +61,26 @@ export BUNDLER_EDITOR=vim
 
 alias ls='ls -ltr'
 alias t='tmuxinator'
-alias npm-exec='PATH=$(npm bin):$PATH'
 alias pewpew='touch ~/.pow/restart.txt'
 
-## rvm
+# rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-## Terminal
 export DISABLE_AUTO_TITLE=true
+
+# Powerline
+function powerline_precmd() {
+  PS1="$(~/powerline-shell.py $? --shell zsh 2> /dev/null)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
