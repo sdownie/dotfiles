@@ -22,9 +22,11 @@ export VISUAL=vim
 export EDITOR=vim
 export BUNDLER_EDITOR=vim
 
+# ALIAS
 alias ls='ls -ltr'
 alias t='tmuxinator'
 alias pewpew='touch ~/.pow/restart.txt'
+alias bi='bundle install'
 
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
