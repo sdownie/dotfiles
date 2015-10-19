@@ -12,6 +12,7 @@ Plugin 'gmarik/vundle'
 " Vundle Plugins
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-bundler'
 Bundle 'powerline/powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
@@ -75,7 +76,7 @@ let g:ctrlp_map = '<c-p>'
 " Ignore case when searching
 set hlsearch
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Makes search act like search in modern browsers
