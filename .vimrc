@@ -38,6 +38,7 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/searchfold'
 Plugin 'tpope/vim-endwise'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " All plugins must be declared between the call vundle#rc() line and the filetype plugin indent on
 filetype plugin indent on
@@ -115,3 +116,9 @@ set viminfo^=%
 set nobackup
 set nowb
 set noswapfile
+
+" Set leader to space
+let mapleader = "\<Space>"
+
+" Auto remove whitespace
+autocmd BufWritePre * StripWhitespace
