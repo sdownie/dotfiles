@@ -123,3 +123,8 @@ let mapleader = "\<Space>"
 
 " Auto remove whitespace
 autocmd BufWritePre * StripWhitespace
+
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
