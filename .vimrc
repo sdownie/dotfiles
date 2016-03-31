@@ -79,6 +79,9 @@ set hlsearch
 " When searching try to be smart about cases
 set smartcase
 
+" WHen searching ignore case
+set ignorecase
+
 " Makes search act like search in modern browsers
 set incsearch
 
