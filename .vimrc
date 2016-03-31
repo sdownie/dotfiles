@@ -101,6 +101,10 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" Set copy
+map <C-x> :!pbcopy<CR>
+map <C-c> :w !pbcopy<CR><CR>
+
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
