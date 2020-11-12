@@ -1,11 +1,11 @@
 [user]
-	name = Scott Downie
-	email = sdownie@sdownie.com
+  name = Scott Downie
+  email = sdownie@sdownie.com
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [push]
   default = simple
 [core]
   editor = vim
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
